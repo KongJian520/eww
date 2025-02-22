@@ -1,30 +1,27 @@
 
-(defvar wifi "wlp0s20f3")
+
+(defpoll network_jons :interval "1s"
+              :initial "initial-value"  ; optional, defaults to poll at startup
+              :run-while true   ; optional, defaults to 'true'
+  `ip -j addr show`)
+
 
 (defwidget network []
   (box
     :class "network"
-    :orientation "h"
+    :halign "center"
     :space-evenly false
-
-    (label
-      :text wifi
-      :class "SSID"
+    :orientation "h"
+    (eventbox
+      :width "30"
+      :height "30"
+      :class "network_icon"
+      ; :
     )
-    (box
-      :orientation "v"
-      :space-evenly false
-      (label
-        :text {EWW_NET.wlp0s20f3.NET_UP}
-        :class "network"
-        
-      )
-      (label
-        :text {EWW_NET.wlp0s20f3.NET_DOWN}
-        :class "network"
-      )
+    (label
+      :text {jq(network_jons, `.[] | select(.ifname == "wlp0s20f3") | .addr_info[]|select(.family == "inet")| .local`) }
     )
   )
-  
 )
+
 

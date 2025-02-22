@@ -81,7 +81,7 @@
     :space-evenly false
     :spacing "5"
     :halign "end"
-    (network)
+    ; (network)
     (tray)
     (battery)
     (audio)
