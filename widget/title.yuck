@@ -1,0 +1,22 @@
+(deflisten title "scripts/get_title.sh title")
+
+
+
+(defwidget title []
+  (box
+    :width "30"
+    :height "30"
+    (label
+      :class "title"
+      :limit-width 50
+      :lines 1
+      :text {title?:"ArchLinux"}
+
+    )
+    
+  )
+  
+)
+
+
+

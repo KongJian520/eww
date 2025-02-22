@@ -1,0 +1,75 @@
+
+; $XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock
+
+(deflisten current_ws "scripts/current_workspace.sh")
+(deflisten hyprctl_ws "scripts/check_ws.sh")
+
+(defwidget workspaces []
+  (eventbox
+    :onscroll "scripts/scroll_workspace.sh {}"
+    :valign "center"
+    ; :width "30"
+    :height "30"
+    (box
+      :class "workspaces"
+      :orientation "h"
+      :space-evenly false
+      :halign "center"
+      (box
+        :space-evenly false
+        (button
+          :class {current_ws == 1 ? "active" : "inactive"}
+          :visible {jq(hyprctl_ws, ".[\"1\"]")==true? true : false}
+          :onclick "hyprctl dispatch workspace 1 -q" "1"
+        )
+        (button
+          :visible {jq(hyprctl_ws, ".[\"2\"]")==true? true : false}
+          :class {current_ws == 2 ? "active" : "inactive"}
+          :onclick "hyprctl dispatch workspace 2 -q" "2"
+        )
+        (button
+          :visible {jq(hyprctl_ws, ".[\"3\"]")==true? true : false}
+          :class {current_ws == 3 ? "active" : "inactive"}
+          :onclick "hyprctl dispatch workspace 3 -q" "3"
+        )
+        (button
+          :visible {jq(hyprctl_ws, ".[\"4\"]")==true? true : false}
+          :class {current_ws == 4 ? "active" : "inactive"}
+          :onclick "hyprctl dispatch workspace 4 -q " "4"
+        )
+        (button
+          :visible {jq(hyprctl_ws, ".[\"5\"]")==true? true : false}
+          :class {current_ws == 5 ? "active" : "inactive"}
+          :onclick "hyprctl dispatch workspace 5 -q" "5"
+        )
+        (button
+          :visible {jq(hyprctl_ws, ".[\"6\"]")==true? true : false}
+          :class {current_ws == 6 ? "active" : "inactive"}
+          :onclick "hyprctl dispatch workspace 6 -q" "6"
+        )
+        (button
+          :visible {jq(hyprctl_ws, ".[\"7\"]" )==true? true : false}
+          :class {current_ws == 7 ? "active" : "inactive"}
+          :onclick "hyprctl dispatch workspace 7 -q" "7"
+        )
+        (button
+          :visible {jq(hyprctl_ws, ".[\"8\"]")==true? true : false}
+          :class {current_ws == 8 ? "active" : "inactive"}
+          :onclick "hyprctl dispatch workspace 8 -q" "8"
+        )
+        (button
+          :visible {jq(hyprctl_ws, ".[\"9\"]")==true? true : false}
+          :class {current_ws == 9 ? "active" : "inactive"}
+          :onclick "hyprctl dispatch workspace 9 -q" "9"
+        )
+        (button
+          :visible {jq(hyprctl_ws, ".[\"10\"]")==true? true : false}
+          :class {current_ws == 10 ? "active" : "inactive"}
+          :onclick "hyprctl dispatch workspace 10 -q" "10"
+        )
+      )
+    )
+  )
+)
+
+

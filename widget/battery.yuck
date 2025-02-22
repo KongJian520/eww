@@ -1,0 +1,41 @@
+
+(defwidget battery []
+  (box
+    :class "battery"
+    :halign "center"
+    :space-evenly false
+    :orientation "h"
+    
+    (box
+      :width "30"
+      :height "30"
+      :class "battery_circular"
+      (overlay
+        (label
+          :text 
+          {EWW_BATTERY.BAT0.status == "Discharging" ?
+          EWW_BATTERY.BAT0.capacity >= 90 ? "󰁹" :
+          EWW_BATTERY.BAT0.capacity >= 80 ? "󰂂" :
+          EWW_BATTERY.BAT0.capacity >= 70 ? "󰂁" :
+          EWW_BATTERY.BAT0.capacity >= 60 ? "󰂀" :
+          EWW_BATTERY.BAT0.capacity >= 50 ? "󰁿" :
+          EWW_BATTERY.BAT0.capacity >= 40 ? "󰁾" :
+          EWW_BATTERY.BAT0.capacity >= 30 ? "󰁽" :
+          EWW_BATTERY.BAT0.capacity >= 20 ? "󰁼" :
+          EWW_BATTERY.BAT0.capacity >= 10 ? "󰁻" :"󱉞"
+          :"󰂄"
+          }
+          :class "battery_icon"
+        )
+        (circular-progress
+          :value {EWW_BATTERY.BAT0.capacity}
+          :thickness "2"
+          :start-at "75"
+          :clockwise true
+        )
+      )
+      
+    )
+  )
+)
+

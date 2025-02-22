@@ -1,0 +1,81 @@
+(defwidget time []
+  (eventbox
+    :onhover "eww open calendar"
+    :onhoverlost "eww close calendar"
+    (box
+      :class "time"
+      :space-evenly false
+      
+      (box
+        :space-evenly false
+        (label
+          :class "time_icon"
+          :text " "
+        )
+        (box
+          :orientation "v"
+          :space-evenly false
+          (label
+            :class "date"
+            :unindent "true"
+            :xalign 0
+            :yalign 0
+            :text "${formattime(EWW_TIME, '%Y/%m/%d')}"
+          )
+          (label
+            :class "clock"
+            :unindent "true"
+            :xalign 0
+            :yalign 0.5
+            :text "${formattime(EWW_TIME, '%H:%M:%S')}"
+          ))
+        
+      )
+    )
+  )
+  
+)
+
+
+(defwindow calendar []
+  :geometry (geometry
+    :x "1%"
+    :y "3px"
+    :width "130px"
+    :anchor "top right"
+  )
+  
+  :monitor 0
+  :windowtype "dock"
+  :stacking "fg"
+  
+  (eventbox
+    :onhoverlost "eww close calendar"
+    (box
+      :orientation "v"
+      :class "calendar"
+      :space-evenly true
+      :halign "center"
+      (box
+        :orientation "v"
+        :space-evenly false
+        ;; Calendar Box
+        (box
+          :space-evenly false
+          :class "calendar"
+          :halign "center"
+          :valign "center"
+          (calendar
+            :show-heading true
+            :show-details true
+            :tooltip {formattime(EWW_TIME, "%B %d %Y")}
+            :day {formattime(EWW_TIME, "%d")}
+            :month {formattime(EWW_TIME, "%m")}
+            :year {formattime(EWW_TIME, "%Y")}
+          )
+        )
+      )
+    )
+  )
+)
+

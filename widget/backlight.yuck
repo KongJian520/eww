@@ -1,0 +1,40 @@
+(deflisten backlight_val :initial ">>" "scripts/get_backlight.sh")
+
+
+(defvar brightness-icons '["暗", "昏", "明", "亮"]')
+(defwidget backlight []
+  (eventbox
+    :onscroll "scripts/set_backlight.sh {}"
+    (box
+      :class "backlight"
+      :halign "center"
+      :space-evenly false
+      :orientation "h"
+      (box
+        :class "backlight_circular"
+        :space-evenly "true"
+        :width "30"
+        :height "30"
+        (overlay
+          (label
+            :text  {
+              backlight_val > 80 ? brightness-icons[3] :
+              backlight_val > 40 ? brightness-icons[2] :
+              backlight_val > 20 ? brightness-icons[1] :
+              brightness-icons[0]
+            }
+            :class "backlight_icon"
+          )
+          (circular-progress
+            :value backlight_val
+            :thickness "2"
+            :start-at "75"
+            :clockwise true
+          )
+        )
+        
+      )
+    )
+  )
+  
+)

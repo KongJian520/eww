@@ -1,0 +1,94 @@
+(include "widget/logo.yuck")
+(include "widget/workspaces.yuck")
+
+
+(include "widget/audio.yuck")
+(include "widget/time.yuck")
+(include "widget/battery.yuck")
+(include "widget/systray.yuck")
+(include "widget/backlight.yuck")
+(include "widget/title.yuck")
+
+(include "widget/network.yuck")
+
+
+
+(defwindow bar
+  :monitor 0
+  :geometry (geometry
+    :x "0%"
+    :y "2px"
+    :width "98%"
+    :height "20px"
+  :anchor "top center")
+  :stacking "bg"
+  :exclusive "true"
+  :namespace "eww"
+  :focusable false
+  :reserve (struts :distance "10px" :side "top")
+  :windowtype "toolbar"
+  :wm-ignore false
+  :space-evenly false
+  (bar)
+)
+
+
+(defwidget bar []
+  (centerbox
+    (start)
+    (center)
+    (end)
+  )
+)
+
+
+
+(defwidget start []
+  (box
+
+    :height "30"
+    :class "start"
+    :halign "start"
+    :hexpand true
+    :space-evenly false
+    ; :spacing "10"
+    (workspaces)
+    
+  )
+)
+
+(defwidget center []
+  (box
+
+    :height "30"
+    :class "center"
+    :orientation ""
+    :halign "start"
+    :hexpand true
+    :space-evenly false
+    ; :space-evenly true
+    ; :halign "center"
+    (logo)
+    (title)
+  )
+)
+
+
+(defwidget end []
+  (box
+    :height "30"
+    :class "end"
+    :space-evenly false
+    :spacing "5"
+    :halign "end"
+    (network)
+    (tray)
+    (battery)
+    (audio)
+    (backlight)
+    (time)
+  )
+  
+)
+
+

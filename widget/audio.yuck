@@ -1,0 +1,40 @@
+(deflisten volume "scripts/get_audio.sh")
+
+(defwidget audio []
+  (eventbox
+    :onscroll "scripts/set_audio.sh {}"
+    :onclick "pavucontrol &"
+    :onmiddleclick "scripts/set_audio.sh mute"
+    :onrightclick "pkill pavucontrol &"
+    (box
+      :class "audio"
+      :halign "center"
+      :space-evenly false
+      :orientation "h"
+      (box
+        :class "audio_circular"
+        :space-evenly "true"
+        :width "30"
+        :height "30"
+        (overlay
+          (label
+            :text {
+            volume >= 66 ? " " :
+            volume >= 33 ? " " :
+            volume >= 1 ? " "  :
+            " "}
+            :class "audio_icon"
+          )
+          (circular-progress
+            :value volume
+            :thickness "2"
+            :start-at "75"
+            :clockwise true
+          )
+        )
+        
+      )
+    )
+  )
+  
+)

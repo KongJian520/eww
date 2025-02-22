@@ -1,0 +1,30 @@
+
+(defvar wifi "wlp0s20f3")
+
+(defwidget network []
+  (box
+    :class "network"
+    :orientation "h"
+    :space-evenly false
+
+    (label
+      :text wifi
+      :class "SSID"
+    )
+    (box
+      :orientation "v"
+      :space-evenly false
+      (label
+        :text {EWW_NET.wlp0s20f3.NET_UP}
+        :class "network"
+        
+      )
+      (label
+        :text {EWW_NET.wlp0s20f3.NET_DOWN}
+        :class "network"
+      )
+    )
+  )
+  
+)
+

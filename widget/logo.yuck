@@ -1,0 +1,12 @@
+(deflisten logo "scripts/get_title.sh icon")
+
+(defwidget logo []
+  (box
+    :width "30"
+    :height "30"
+    (label :class "logo"
+      :text {logo?:""}
+    )
+  )
+  
+)

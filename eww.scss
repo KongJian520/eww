@@ -1,0 +1,209 @@
+$radius: 10px;
+// Nord Color Palette
+$bg: rgba(46, 52, 64, 0.5);
+// $bg: rgba(48, 100, 185, 0.315);
+$fg: #D8DEE9;
+$frost: #E5E9F0;
+$red: #BF616A;
+$green: #A3BE8C;
+$yellow: #EBCB8B;
+$blue: #81A1C1; // 选中色
+$purple: #B48EAD;
+$logo: #1793D1;
+// Nord Color Palette
+
+@keyframes colorChange {
+  0% {
+    background-color: #ff5733; // 红色
+  }
+
+  25% {
+    background-color: #33ff57; // 绿色
+  }
+
+  50% {
+    background-color: #3357ff; // 蓝色
+  }
+
+  75% {
+    background-color: #f1c40f; // 黄色
+  }
+
+  100% {
+    background-color: #8e44ad; // 紫色
+  }
+}
+
+
+* {
+
+  all: unset;
+  // font-family: ;
+  font-family: "Exo 2:Bold", "JetBrainsMono Nerd Font:Blod";
+  font-size: 10px;
+  background: transparent;
+  border: none;
+  border-radius: $radius ;
+
+  .network {
+    color: $fg;
+    border: $bg 3px solid;
+    // padding: 0 5px;
+
+  }
+
+  .workspaces {
+    all: unset;
+    background-color: $bg;
+    border-radius: $radius;
+    padding: 5px;
+
+    .active,
+    .button,
+    .inactive {
+      color: $fg;
+      border: #2E3440 0px solid;
+      // background-color: $bg;
+      border-radius: $radius;
+      font-style: normal;
+      // margin: 0 2px;
+      padding: 0 10px;
+      animation: slide-in 0.5s ease-in-out;
+      transition-property: opacity;
+      transition-duration: 2s;
+      border: transparent 1px solid;
+    }
+
+    // 特异性样式
+    .inactive {
+      animation: slide-out 0.5s ease-in-out;
+    }
+
+    .inactive:hover {
+      background-color: $purple;
+      transition: all 0.5s ease-out;
+    }
+
+  
+    .active {
+      color: $blue;
+      // background-color: $green;
+      border: $blue 1px solid;
+      animation: slide-in 0.5s ease-in-out;
+      transition-property: opacity;
+      transition-duration: 2s;
+
+    }
+
+  }
+
+  .logo {
+    color: $fg;
+    // background: $bg;
+    border: #2E3440 0px solid;
+    padding: 0 5px;
+    // padding-right: 5px;
+    font-size: large;
+  }
+
+  .time {
+    color: $fg;
+    font-size: large;
+    background-color: $bg;
+    padding: 0 5px;
+
+    .time_icon {
+      color: $blue;
+      font-size: xx-large;
+    }
+
+    .clock {
+      font-size: large;
+    }
+
+    .date {
+      color: $yellow;
+      font-family: "Exo 2";
+      font-size: small;
+      font-style: initial;
+    }
+  }
+
+  .audio {
+    color: $fg;
+    background-color: $bg;
+    padding: 0 5px;
+
+    .audio_icon,
+    .audio_circular {
+      font-size: small;
+      color: $yellow;
+    }
+  }
+
+  .battery {
+    color: $fg;
+    background-color: $bg;
+    padding: 0 5px;
+
+    .battery_icon,
+    .battery_circular {
+      font-size: small;
+      color: $green;
+    }
+  }
+
+  .backlight {
+    color: $fg;
+    background-color: $bg;
+    padding: 0 5px;
+
+    .backlight_icon,
+    .backlight_circular {
+      color: $red;
+      font-size: small;
+    }
+  }
+
+  .tray {
+    padding: 0 5px;
+    background-color: $bg;
+  }
+
+  .title {
+    // background-color: $bg;
+    font-size: small;
+    // padding: 0 5px;
+  }
+
+  // .logo,
+  .start {
+    padding: 0 5px;
+    // background-color: $bg;
+
+    color: $red;
+  }
+
+  .calendar {
+    border-radius: 0px;
+    font-size: 15px;
+    // background-color: rgba(255, 255, 255, 0.504);
+  }
+  calendar {
+    color: $fg;
+    padding: 8px;
+    font-size: 15px;
+    background-color: $bg;
+    // padding-bottom: 50px;
+  }
+  calendar:indeterminate {
+    color:$yellow;
+  }
+
+  calendar:selected {
+    background: $frost;
+    color: $bg;
+    // border: $frost 1px solid;
+  }
+
+}
