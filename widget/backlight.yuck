@@ -13,8 +13,8 @@
       (box
         :class "backlight_circular"
         :space-evenly "true"
-        :width "30"
-        :height "30"
+        :width "15"
+        ; :height "15"
         (overlay
           (label
             :text  {
@@ -27,7 +27,7 @@
           )
           (circular-progress
             :value backlight_val
-            :thickness "2"
+            :thickness "1"
             :start-at "75"
             :clockwise true
           )

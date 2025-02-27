@@ -48,6 +48,7 @@
   :monitor 0
   :windowtype "dock"
   :stacking "fg"
+  :namespace "calendar"
   
   (eventbox
     :onhoverlost "eww close calendar"

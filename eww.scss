@@ -7,7 +7,7 @@ $frost: #E5E9F0;
 $red: #BF616A;
 $green: #A3BE8C;
 $yellow: #EBCB8B;
-$blue: #81A1C1; // 选中色
+$blue: rgb(129, 161, 193,0.5); // 选中色
 $purple: #B48EAD;
 $logo: #1793D1;
 // Nord Color Palette
@@ -39,8 +39,9 @@ $logo: #1793D1;
 
   all: unset;
   // font-family: ;
-  font-family: "Exo 2:Bold", "JetBrainsMono Nerd Font:Blod";
-  font-size: 10px;
+  // font-family: "Torus", "JetBrainsMono Nerd Font:Blod";
+  font-family: "UbuntuMono Nerd Font";
+  font-size: large;
   background: transparent;
   border: none;
   border-radius: $radius ;
@@ -57,6 +58,7 @@ $logo: #1793D1;
     background-color: $bg;
     border-radius: $radius;
     padding: 5px;
+    font-size: 10px;
 
     .active,
     .button,
@@ -86,12 +88,13 @@ $logo: #1793D1;
 
   
     .active {
-      color: $blue;
-      // background-color: $green;
-      border: $blue 1px solid;
+      color: $frost;
+      background-color: $blue;
+      // border: $blue 1px solid;
       animation: slide-in 0.5s ease-in-out;
       transition-property: opacity;
       transition-duration: 2s;
+      padding: 0 20px;
 
     }
 
@@ -107,8 +110,10 @@ $logo: #1793D1;
   }
 
   .time {
-    color: $fg;
+    font-family: "UbuntuMono Nerd Font";
     font-size: large;
+    color: $fg;
+
     background-color: $bg;
     padding: 0 5px;
 
@@ -123,7 +128,7 @@ $logo: #1793D1;
 
     .date {
       color: $yellow;
-      font-family: "Exo 2";
+
       font-size: small;
       font-style: initial;
     }
@@ -131,40 +136,40 @@ $logo: #1793D1;
 
   .audio {
     color: $fg;
-    background-color: $bg;
     padding: 0 5px;
 
     .audio_icon,
     .audio_circular {
-      font-size: small;
+      font-size: 8px;
       color: $yellow;
     }
   }
 
   .battery {
     color: $fg;
-    background-color: $bg;
     padding: 0 5px;
 
     .battery_icon,
     .battery_circular {
-      font-size: small;
+      font-size: 8px;
       color: $green;
     }
   }
 
   .backlight {
     color: $fg;
-    background-color: $bg;
     padding: 0 5px;
 
     .backlight_icon,
     .backlight_circular {
       color: $red;
-      font-size: small;
+      font-size: 8px;
     }
   }
 
+  .system_controls{
+    background-color: $bg;
+  }
   .tray {
     padding: 0 5px;
     background-color: $bg;

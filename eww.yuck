@@ -8,6 +8,7 @@
 (include "widget/systray.yuck")
 (include "widget/backlight.yuck")
 (include "widget/title.yuck")
+; (include "widget/music.yuck")
 
 (include "widget/network.yuck")
 
@@ -19,7 +20,7 @@
     :x "0%"
     :y "2px"
     :width "98%"
-    :height "20px"
+    :height "12px"
   :anchor "top center")
   :stacking "bg"
   :exclusive "true"
@@ -45,22 +46,23 @@
 
 (defwidget start []
   (box
-
-    :height "30"
+    
+    :height "10"
     :class "start"
     :halign "start"
     :hexpand true
     :space-evenly false
     ; :spacing "10"
     (workspaces)
+      ; (music_widget)
     
   )
 )
 
 (defwidget center []
   (box
-
-    :height "30"
+    
+    :height "10"
     :class "center"
     :orientation ""
     :halign "start"
@@ -76,16 +78,19 @@
 
 (defwidget end []
   (box
-    :height "30"
+    :height "15"
     :class "end"
     :space-evenly false
     :spacing "5"
     :halign "end"
     ; (network)
     (tray)
-    (battery)
-    (audio)
-    (backlight)
+    (box
+      :class "system_controls"
+      (battery)
+      (audio)
+      (backlight)
+    )
     (time)
   )
   

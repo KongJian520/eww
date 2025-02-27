@@ -7,8 +7,8 @@
     :orientation "h"
     
     (box
-      :width "30"
-      :height "30"
+      :width "15"
+      ; :height "15"
       :class "battery_circular"
       (overlay
         (label
@@ -29,7 +29,7 @@
         )
         (circular-progress
           :value {EWW_BATTERY.BAT0.capacity}
-          :thickness "2"
+          :thickness "1"
           :start-at "75"
           :clockwise true
         )
