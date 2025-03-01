@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 socket_path="$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
 

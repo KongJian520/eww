@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # 检查参数是否提供
 if [ "$#" -ne 1 ]; then

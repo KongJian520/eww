@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # 定义一个函数来根据 class 返回相应的图标
 get_icon() {

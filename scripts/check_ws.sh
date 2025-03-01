@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # 定义一个函数来生成 JSON
 generate_json() {

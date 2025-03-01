@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # 亮度文件路径
 BRIGHTNESS_FILE="/sys/class/backlight/nvidia_wmi_ec_backlight/actual_brightness"

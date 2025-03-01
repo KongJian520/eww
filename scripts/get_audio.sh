@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # 获取当前音量并格式化为三位数字
 get_current_volume() {
