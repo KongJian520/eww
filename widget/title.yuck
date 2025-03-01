@@ -10,7 +10,7 @@
       :class "title"
       :limit-width 50
       :lines 1
-      :text {title?:"ArchLinux"}
+      :text {title?:"Nixos"}
 
     )
     

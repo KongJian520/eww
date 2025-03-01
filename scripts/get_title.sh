@@ -6,7 +6,7 @@ get_icon() {
 
     case "$class" in
     "code")
-        echo "" # 只返回图标
+        echo "󰨞" # 只返回图标
         ;;
     "firefox")
         echo "" # 只返回图标
@@ -23,18 +23,6 @@ get_icon() {
     "google-chrome")
         echo "" # 只返回图标
         ;;
-    #         "firefox")
-    # echo ""  # 只返回图标
-    # ;;
-    #         "firefox")
-    # echo ""  # 只返回图标
-    # ;;
-    #         "firefox")
-    # echo ""  # 只返回图标
-    # ;;
-    #         "firefox")
-    # echo ""  # 只返回图标
-    # ;;
     "kitty")
         echo "󰄛" # 只返回图标
         ;;

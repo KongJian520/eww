@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # 亮度文件路径
-BRIGHTNESS_FILE="/sys/class/backlight/nvidia_wmi_ec_backlight/actual_brightness"
-MAX_BRIGHTNESS_FILE="/sys/class/backlight/nvidia_wmi_ec_backlight/max_brightness"
+BRIGHTNESS_FILE="/sys/class/backlight/nvidia_0/actual_brightness"
+MAX_BRIGHTNESS_FILE="/sys/class/backlight/nvidia_0/max_brightness"
 
 
 doing() {

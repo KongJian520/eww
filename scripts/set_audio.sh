@@ -8,6 +8,7 @@ fi
 
 if [ "$1" == "up" ]; then
     pactl set-sink-volume @DEFAULT_SINK@ +1%
+
     # echo "Volume increased by 1%."
 elif [ "$1" == "down" ]; then
     pactl set-sink-volume @DEFAULT_SINK@ -1%

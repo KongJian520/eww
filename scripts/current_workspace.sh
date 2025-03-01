@@ -6,6 +6,6 @@ current_workspace=$(hyprctl activeworkspace | grep 'workspace ID' | awk '{print 
 echo "$current_workspace"
 
 socat -u UNIX-CONNECT:"$socket_path" - | while read -r event; do
-    # echo "$event"
-    echo "$event" | grep '^workspace>>' | awk -F'>>' '{print $2}'
+    # Check for both focusedmon and workspacev2 events
+    echo "$event" | grep -E '^(focusedmon|workspacev2)>>(.*)' | awk -F'>>' '{print $2}' | awk -F',' '{print $2}'
 done    
